@@ -1,33 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  Container,
+  Typography,
+} from '@mui/material'
+import { grey, red } from '@mui/material/colors'
+import CssBaseline from '@mui/material/CssBaseline'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+
+const theme = createTheme({
+  palette: {
+    background: {
+      default: grey[100],
+    },
+    primary: {
+      main: red[500],
+    },
+  },
+  typography: {
+    fontFamily: 'quatro-slab',
+    fontSize: 14,
+  },
+})
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className='App'>
-      <div>
-        <a href='https://vitejs.dev' target='_blank'>
-          <img src='/vite.svg' className='logo' alt='Vite logo' />
-        </a>
-        <a href='https://reactjs.org' target='_blank'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className='read-the-docs'>
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Container maxWidth='xl' sx={{ p: 2 }}>
+        <Card>
+          <CardHeader
+            title={<Typography variant='h6'>Journalism Spectrum</Typography>}
+          />
+          <CardContent>Hello, world!</CardContent>
+        </Card>
+      </Container>
+    </ThemeProvider>
   )
 }
 
