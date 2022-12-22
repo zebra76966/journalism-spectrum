@@ -1,7 +1,5 @@
 # Newslaundry Journalism Spectrum
 
-This app is built with and , and uses .
-
 ## Tooling
 
 - [TypeScript](https://www.typescriptlang.org/)
@@ -35,3 +33,7 @@ The deployed version of the app can be accessed at https://krishna-acondy.io/jou
 - Run `yarn dev` to start the local dev server.
 
 The app will be available on http://localhost:5173/
+
+Please use a PR to make any changes to the app - there are branch protection rules preventing direct pushes to `main`.
+
+[Conventional Commit messages](https://www.conventionalcommits.org/en/v1.0.0/) are recommended for better readability.
