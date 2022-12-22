@@ -18,7 +18,6 @@ jobs:
           node-version: '16.x'
 
       - name: Install Dependencies
-        env:
         run: yarn install --frozen-lockfile
 
       - name: Build
