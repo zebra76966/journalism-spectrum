@@ -20,6 +20,9 @@ jobs:
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Check Code Style
+        run: yarn run lint
+
       - name: Build
         run: |
           yarn build
@@ -35,6 +38,9 @@ jobs:
 
       - name: Install Dependencies
         run: yarn
+
+      - name: Check Code Style
+        run: yarn run lint
 
       - name: Build & Deploy
         run: |
