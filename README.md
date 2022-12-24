@@ -10,7 +10,6 @@
 ## Frameworks and Libraries
 
 - [React 18](https://reactjs.org/)
-- [Material UI](https://mui.com/)
 - TODO: Possibly `visx` for charting
 
 ## CI/CD
