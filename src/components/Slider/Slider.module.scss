@@ -10,7 +10,7 @@
 .slider {
   -webkit-appearance: none;
   appearance: none;
-  width: 100%;
+  width: 50%;
   height: 18px;
   outline: none;
   border-radius: 2px;
@@ -49,4 +49,10 @@ output.social {
   &::-webkit-slider-thumb {
       background: #396FFC;
     }
+}
+
+@media screen and (max-width: 768px) {
+.slider {
+  width: 100%;
+}
 }
