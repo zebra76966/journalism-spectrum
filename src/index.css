@@ -91,6 +91,11 @@
   font-weight: 600;
 }
 
+/* html,
+body {
+  overflow-x: scroll;
+} */
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -155,8 +160,132 @@ h1 {
   align-items: center;
 }
 
+.chartTabber {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  border-radius: 50rem;
+  width: 50%;
+  border: 1px solid grey;
+  display: flex;
+  justify-content: space-between;
+}
+.chartTabber button {
+  cursor: pointer;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  padding: 20px;
+  width: 100%;
+  transition: 0.5s ease-in-out;
+}
+.chartTabber .active {
+  background: #ffbbb7;
+  color: #ed1b24;
+  border-radius: 50rem 0 0 50rem;
+}
+
+.section p {
+  font-size: 20px;
+}
+
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 1.5rem;
   }
+  .chartTabber {
+    width: 80%;
+  }
+  .chartTabber button {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  .chartTabber {
+    width: 100%;
+  }
+  .chartTabber button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* Search section start */
+.card {
+  display: inline-block;
+  text-align: center;
+}
+
+.card a:link {
+  color: #56ccf2;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.card h3 {
+  font-weight: 400;
+  color: #214354;
+  margin: 0;
+  padding: 10px;
+}
+
+.card h4 {
+  font-weight: 400;
+  margin: 0;
+  color: #78909c;
+  padding-bottom: 20px;
+}
+
+.search {
+  background: #f4f4f4;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 0 40px rgba(51, 51, 51, 0.1);
+  margin-bottom: 50px;
+}
+
+.search input {
+  font-size: 18px;
+  width: 100%;
+  height: 60px;
+  padding-left: 50px;
+  text-indent: 25px;
+  border-radius: 10px;
+  border: 2px solid #d6d4d4;
+}
+
+.search input:focus-visible,
+.search input:focus {
+  box-shadow: none;
+  border: 2px solid #999999;
+  outline: none;
+}
+
+.search .fa-search {
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  color: rgba(0, 0, 0, 0.6);
+  transform: translate(-50%, -50%);
+}
+/* Search Section End */
+
+hr {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.ctav {
+  font-family: 'Roboto Slab';
+  background-color: #ed1b24;
+  font-weight: bold;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 24px;
+  word-spacing: 10px;
+  border: none;
 }

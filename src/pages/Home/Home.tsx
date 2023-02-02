@@ -1,17 +1,21 @@
 import classes from './Home.module.css'
 import hero from './hero.png'
+// import altHero from './althero.png'
+import Navbar from './Navbar'
 import Explainer from './Explainer'
 
 function Home() {
   return (
     <div className='page'>
+      <Navbar/>
       <div className={classes.hero}>
         <div
           className={classes.image}
           style={{ backgroundImage: `url(${hero})` }}
-        />
+        >
+        </div>
         <div className='column'>
-          <h1>Journalism Spectrum</h1>
+          <h1 style={{color:'#ED1B24'}}>Journalism Spectrum</h1>
           <div className={classes.copy}>
             Are your views truly neutral? In the age of information, it is easy
             to get into echo chambers of your own opinions.{' '}

@@ -83,6 +83,10 @@ function Slider({ type = 'political' }: SliderProps) {
   const [value, setValue] = React.useState(0)
   return (
     <div className={`${classes.sliderContainer} ${classes[type]}`}>
+      <div className={classes.leftRight}>
+        <h4>Left</h4>
+        <h4>Right</h4>
+      </div>
       <input
         className={`${classes.slider} ${classes[type]}`}
         type='range'
@@ -94,7 +98,7 @@ function Slider({ type = 'political' }: SliderProps) {
         onChange={(e) => setValue(parseInt(e.target.value))}
       />
       <output className={classes[type]}>
-        <h2>{find(values, (v) => v.value === value)?.label}</h2>
+        <h3>{find(values, (v) => v.value === value)?.label}</h3>
       </output>
       <span style={{ textAlign: 'center' }}>
         {find(values, (v) => v.value === value)?.description}
