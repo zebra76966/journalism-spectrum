@@ -103,7 +103,6 @@ const Voting = () => {
         </div>
       )
       break
-
     default:
       break
   }
