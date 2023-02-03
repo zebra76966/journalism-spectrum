@@ -10,8 +10,8 @@ const Card = (props) => {
           <img
             src={props.res.dp}
             style={{
-              width: '250px',
-              height: '250px',
+              width: '200px',
+              height: '200px',
               objectFit: 'cover',
               borderRadius: '100%',
             }}

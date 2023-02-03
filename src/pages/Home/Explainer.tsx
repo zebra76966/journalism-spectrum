@@ -1,6 +1,7 @@
 import { Slider } from '../../components'
 import SearchArea from '../../components/SearchArea/search'
 import { useState } from 'react'
+import { Outlet, Link } from 'react-router-dom'
 
 function Explainer() {
   const [activeBtn, setActivebtn] = useState('team')
@@ -98,10 +99,12 @@ function Explainer() {
           What do you think of these journalists? Vote yourself and let the
           world know!
         </p>
-        <button className='ctav'>
+        <Link to='/journalism-spectrum/vote' className='ctav'>
           Vote <i className='fa fa-arrow-right'></i>
-        </button>
+        </Link>
       </div>
+
+      <Outlet />
     </>
   )
 }

@@ -1,6 +1,7 @@
 import classes from './Home.module.css'
 import logo from './nlLogo.png'
 import { useState } from 'react'
+import { Outlet, Link } from 'react-router-dom'
 
 function Navbar() {
   const [toggler, setToggler] = useState(false)
@@ -19,13 +20,22 @@ function Navbar() {
           </button>
 
           <div className={`${classes.navLinks} ${chkToggle}`}>
-            <a href='#'>Home</a>
-            <a href='#'>About us</a>
-            <a href='#'>Contact us</a>
-            <a href='#'>Login</a>
+            <Link to='/journalism-spectrum/' className={classes.links}>
+              Home
+            </Link>
+            <Link to='/journalism-spectrum/vote' className={classes.links}>
+              Vote
+            </Link>
+            <Link to='/journalism-spectrum/' className={classes.links}>
+              Contact us
+            </Link>
+            <Link to='/journalism-spectrum/' className={classes.links}>
+              Login
+            </Link>
           </div>
         </div>
       </div>
+      <Outlet />
     </nav>
   )
 }

@@ -29,7 +29,7 @@ function SearchArea() {
       >
         {datas.map((pini) => {
           if (pini.name.toLowerCase().includes(search)) {
-            return <Card ls={pini.id} res={pini} />
+            return <Card key={pini.id} res={pini} />
           }
         })}
       </div>
