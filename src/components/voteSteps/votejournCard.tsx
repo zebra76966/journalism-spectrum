@@ -1,6 +1,6 @@
 const Card = (props) => {
-  // console.log(props.isVoted)
   let isVoted = props.isVoted ? 'card-select' : ''
+
   return (
     <>
       <div
@@ -9,11 +9,7 @@ const Card = (props) => {
           isVoted ? props.onDelete(props.res.id) : props.onClick(props.res.id)
         }
       >
-        <div
-          style={{
-            width: '100%',
-          }}
-        >
+        <div style={{ width: '100%' }}>
           <img src={props.res.dp} className='vote-img' alt='...' />
           <h3>{props.res.name}</h3>
         </div>

@@ -24,7 +24,9 @@ function Home() {
         </div>
       </div>
       <div className={classes.section}>
-        <Explainer />
+        <div className='container'>
+          <Explainer />
+        </div>
       </div>
     </div>
   )

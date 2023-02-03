@@ -78,7 +78,7 @@ const socialValues: SliderValue[] = [
   },
 ]
 
-function Slider({ type = 'political' }: SliderProps) {
+function Slider({ type = 'political', hidetext = false }: SliderProps) {
   const values = type === 'political' ? politicalValues : socialValues
   const [value, setValue] = React.useState(0)
   return (
@@ -100,9 +100,11 @@ function Slider({ type = 'political' }: SliderProps) {
       <output className={classes[type]}>
         <h3>{find(values, (v) => v.value === value)?.label}</h3>
       </output>
-      <span style={{ textAlign: 'center' }}>
-        {find(values, (v) => v.value === value)?.description}
-      </span>
+      {hidetext && (
+        <span style={{ textAlign: 'center' }}>
+          {find(values, (v) => v.value === value)?.description}
+        </span>
+      )}
     </div>
   )
 }

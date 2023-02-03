@@ -1,16 +1,13 @@
 import React from 'react'
-import { useState } from 'react'
 import Card from './votejournCard'
-import mockData from './MOCK_DATA.json'
+import { useState } from 'react'
 
-function SearchArea() {
-  const [datas, setData] = useState(mockData)
+function SearchArea(props) {
   const [search, setSearch] = useState('')
-  const [selectog, setSelectTog] = useState([])
-  console.log(selectog)
   return (
     <>
-      <div className='page'>
+      <div className='container'>
+        <h1 style={{ textAlign: 'center' }}>Which journalist do you follow?</h1>
         <div className='section'>
           <div className='search'>
             <input
@@ -22,21 +19,15 @@ function SearchArea() {
           </div>
 
           <div className='cardLayout'>
-            {datas.map((pini) => {
+            {props.allres.map((pini) => {
               if (pini.name.toLowerCase().includes(search)) {
                 return (
                   <Card
                     key={pini.id}
                     res={pini}
-                    isVoted={selectog.includes(pini.id) ? true : false}
-                    onClick={(val) => setSelectTog((ini) => [...ini, val])}
-                    onDelete={(val) =>
-                      setSelectTog((ini) =>
-                        ini.filter(function (e) {
-                          return e != pini.id
-                        })
-                      )
-                    }
+                    isVoted={props.selected.includes(pini.id) ? true : false}
+                    onClick={(val) => props.onClick(val)}
+                    onDelete={(val) => props.onDelete(val)}
                   />
                 )
               }

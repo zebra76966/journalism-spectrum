@@ -146,6 +146,12 @@ h1 {
   height: 100%;
 }
 
+.container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 50px auto;
+}
+
 .column {
   display: flex;
   flex-direction: column;
@@ -192,11 +198,18 @@ h1 {
 }
 
 @media screen and (max-width: 768px) {
+  .container {
+    max-width: 720px !important;
+  }
   h1 {
     font-size: 1.5rem;
   }
   .chartTabber {
     width: 80%;
+  }
+  .card .vote-img {
+    width: 150px !important;
+    height: 150px !important;
   }
   .chartTabber button {
     font-size: 16px;
@@ -207,7 +220,29 @@ h1 {
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 1140px !important;
+  }
+  .cardLayout {
+    grid-template-columns: auto auto auto auto !important;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .container {
+    max-width: 920px !important;
+  }
+  .cardLayout {
+    grid-template-columns: auto auto auto !important;
+  }
+}
+
 @media screen and (max-width: 512px) {
+  .container {
+    max-width: 490px !important;
+  }
+
   .chartTabber {
     width: 100%;
   }
@@ -216,11 +251,12 @@ h1 {
     padding: 10px;
   }
   .card .vote-img {
-    width: 120px !important;
-    height: 120px !important;
+    width: 100px !important;
+    height: 100px !important;
   }
   .cardLayout {
-    gap: 20px !important;
+    gap: 1px !important;
+    width: 100%;
   }
 }
 
@@ -229,13 +265,14 @@ h1 {
   display: inline-block;
   text-align: center;
   width: fit-content;
+  margin: 0 auto;
 }
 
 .cardLayout {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto;
   gap: 40px;
-  width: 100%;
+  width: fit-content;
 }
 .card .vote-img {
   width: 200px;
@@ -329,13 +366,38 @@ hr {
   text-decoration: none;
   font-family: 'Roboto Slab';
   background-color: #ed1b24;
-  font-weight: bold;
+  font-weight: 800;
   color: white;
   padding: 15px 30px;
   border-radius: 5px;
   font-size: 24px;
   border: none;
+  cursor: pointer;
 }
 .ctav i {
   padding-left: 10px;
+}
+
+.success {
+  background-color: rgba(0, 128, 0, 0.1);
+  color: #008000;
+  padding: 20px;
+  text-align: center;
+}
+
+.success .fa-check {
+  border-radius: 100%;
+  padding: 5px;
+  color: white;
+  background-color: #008000;
+}
+
+.success button {
+  padding: 12px 10px;
+  background: #ffffff;
+  border-radius: 5px;
+  font-size: 20px;
+  border: 1px solid #cccccc;
+  color: #214354;
+  word-spacing: 10px;
 }

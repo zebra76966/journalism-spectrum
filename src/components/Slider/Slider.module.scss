@@ -1,10 +1,13 @@
 .sliderContainer {
+  background-color: #f4f4f4;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  padding: 1rem 0;
+  width: 90vw;
+  max-width: 850px;
+  text-align: center;
+  padding: 1rem;
 }
 
 .slider {
