@@ -91,11 +91,6 @@
   font-weight: 600;
 }
 
-/* html,
-body {
-  overflow-x: scroll;
-} */
-
 body::-webkit-scrollbar {
   display: none;
 }
