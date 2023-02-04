@@ -36,7 +36,7 @@ function Explainer() {
             borderRadius: '10px',
           }}
         >
-          <Slider type='political' hidetext={false} />
+          <Slider type='political' hidetext={true} />
         </span>
       </div>
 
