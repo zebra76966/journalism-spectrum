@@ -65,7 +65,7 @@ const Voting = (): JSX.Element | any => {
       break
     case 2:
       return (
-        <div className='container'>
+        <div className='container' style={{ padding: '0 2rem' }}>
           <div style={{ display: 'flex', padding: '0 10px' }}>
             <button onClick={() => setStep((ini) => ini - 1)} style={btnBack}>
               <i className='fa fa-arrow-left'></i>
@@ -86,7 +86,7 @@ const Voting = (): JSX.Element | any => {
       break
     case 3:
       return (
-        <div className='container'>
+        <div className='container' style={{ padding: '0 2rem' }}>
           <div className='success'>
             <h3>
               <i className='fa fa-check'></i> Vote your Journalist?
