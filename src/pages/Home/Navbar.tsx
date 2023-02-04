@@ -9,7 +9,7 @@ function Navbar() {
 
   return (
     <nav>
-      <Link to='/journalist-spectrum/'>
+      <Link to='/journalism-spectrum/'>
         <img src={logo} className={classes.navBrand} />
       </Link>
       <div>

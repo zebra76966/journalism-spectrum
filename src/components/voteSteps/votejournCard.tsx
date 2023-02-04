@@ -1,4 +1,4 @@
-const Card = (props) => {
+const Card = (props: any) => {
   let isVoted = props.isVoted ? 'card-select' : ''
 
   return (

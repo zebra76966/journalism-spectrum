@@ -1,7 +1,6 @@
 import SearchArea from '../../components/voteSteps/votesearch'
 import VoteStepa from '../../components/voteSteps/voteStep2'
 import mockData from '../../components/voteSteps/MOCK_DATA.json'
-import { Outlet, Link, redirect } from 'react-router-dom'
 import { useState } from 'react'
 
 const btnFix = {
@@ -9,21 +8,21 @@ const btnFix = {
   bottom: '5%',
   right: '5%',
   zIndex: '99',
-}
+} as const
 const btnBack = {
   background: 'none',
   border: 'none',
   color: '#214354',
   fontWeight: '400',
   fontSize: '32px',
-}
+} as const
 
-const Voting = () => {
+const Voting = (): JSX.Element | any => {
   const [datas, setData] = useState(mockData)
-  const [selectog, setSelectTog] = useState([])
+  const [selectog, setSelectTog] = useState<number[]>([])
   const [warntog, setWarntog] = useState(false)
   const [steps, setStep] = useState(1)
-
+  console.log(selectog)
   const warn = {
     color: '#ed1b24',
     background: 'rgb(255 202 202)',
@@ -31,7 +30,7 @@ const Voting = () => {
     borderRadius: '5px',
     display: warntog ? 'block' : 'none',
     textAlign: 'center',
-  }
+  } as const
 
   switch (steps) {
     case 1:
@@ -41,8 +40,8 @@ const Voting = () => {
           <SearchArea
             allres={datas}
             selected={selectog}
-            onClick={(val) => setSelectTog((ini) => [...ini, val])}
-            onDelete={(val) =>
+            onClick={(val: number) => setSelectTog((ini) => [...ini, val])}
+            onDelete={(val: number) =>
               setSelectTog((ini) =>
                 ini.filter(function (e) {
                   return e != val

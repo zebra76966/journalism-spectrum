@@ -36,7 +36,7 @@ function Explainer() {
             borderRadius: '10px',
           }}
         >
-          <Slider type='political' />
+          <Slider type='political' hidetext={false} />
         </span>
       </div>
 
@@ -53,7 +53,7 @@ function Explainer() {
             borderRadius: '10px',
           }}
         >
-          <Slider type='social' />
+          <Slider type='social' hidetext={false} />
         </span>
       </div>
       <hr />

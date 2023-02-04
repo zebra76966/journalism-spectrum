@@ -7,7 +7,7 @@ const cardAlign = {
   alignItems: 'center',
 }
 
-const VoteCard = (props) => {
+const VoteCard = (props: any) => {
   return (
     <div className='container' style={{ marginBottom: '100px' }}>
       <div className='card'>

@@ -10,6 +10,7 @@ type SliderValue = {
 
 type SliderProps = {
   type: 'political' | 'social'
+  hidetext: false | true
 }
 
 const politicalValues: SliderValue[] = [

@@ -2,7 +2,7 @@ import React from 'react'
 import Card from './votejournCard'
 import { useState } from 'react'
 
-function SearchArea(props) {
+function SearchArea(props: any) {
   const [search, setSearch] = useState('')
   return (
     <>
@@ -19,15 +19,15 @@ function SearchArea(props) {
           </div>
 
           <div className='cardLayout'>
-            {props.allres.map((pini) => {
+            {props.allres.map((pini: any) => {
               if (pini.name.toLowerCase().includes(search)) {
                 return (
                   <Card
                     key={pini.id}
                     res={pini}
                     isVoted={props.selected.includes(pini.id) ? true : false}
-                    onClick={(val) => props.onClick(val)}
-                    onDelete={(val) => props.onDelete(val)}
+                    onClick={(val: number) => props.onClick(val)}
+                    onDelete={(val: number) => props.onDelete(val)}
                   />
                 )
               }
