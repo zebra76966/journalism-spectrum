@@ -53,7 +53,7 @@ function Explainer() {
             borderRadius: '10px',
           }}
         >
-          <Slider type='social' hidetext={false} />
+          <Slider type='social' hidetext={true} />
         </span>
       </div>
       <hr />
