@@ -35,7 +35,7 @@ const Voting = (): JSX.Element | any => {
   switch (steps) {
     case 1:
       return (
-        <>
+        <div className='container' style={{ padding: '0 1rem' }}>
           <h4 style={warn}>Please Choose atleast One!</h4>
           <SearchArea
             allres={datas}
@@ -60,12 +60,12 @@ const Voting = (): JSX.Element | any => {
           >
             Proceed to vote <i className='fa fa-arrow-right'></i>
           </button>
-        </>
+        </div>
       )
       break
     case 2:
       return (
-        <div className='container' style={{ padding: '0 2rem' }}>
+        <div className='container' style={{ padding: '0 1rem' }}>
           <div style={{ display: 'flex', padding: '0 10px' }}>
             <button onClick={() => setStep((ini) => ini - 1)} style={btnBack}>
               <i className='fa fa-arrow-left'></i>
@@ -86,7 +86,7 @@ const Voting = (): JSX.Element | any => {
       break
     case 3:
       return (
-        <div className='container' style={{ padding: '0 2rem' }}>
+        <div className='container' style={{ padding: '0 1rem' }}>
           <div className='success'>
             <h3>
               <i className='fa fa-check'></i> Vote your Journalist?
