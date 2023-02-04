@@ -20,7 +20,6 @@ function Navbar() {
           >
             <i className='fa fa-bars' />
           </button>
-
           <div className={`${classes.navLinks} ${chkToggle}`}>
             <Link to='/journalism-spectrum/' className={classes.links}>
               Home
