@@ -194,11 +194,17 @@ h1 {
 .slideToggler {
   display: none;
 }
+.hideDesk {
+  display: block;
+}
 /* Hidding Slider End */
 
 @media screen and (max-width: 768px) {
   .slideToggler {
     display: block;
+  }
+  .hideDesk {
+    display: none !important;
   }
   .container {
     max-width: 720px !important;

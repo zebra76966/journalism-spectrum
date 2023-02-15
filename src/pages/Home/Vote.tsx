@@ -1,6 +1,7 @@
 import SearchArea from '../../components/voteSteps/votesearch'
 import VoteStepa from '../../components/voteSteps/voteStep2'
 import mockData from '../../components/voteSteps/MOCK_DATA.json'
+import { JournalismSpectrumEdit } from '../../components/Grid/SpectrumEditPage'
 import { useState } from 'react'
 
 const btnFix = {
@@ -35,32 +36,40 @@ const Voting = (): JSX.Element | any => {
   switch (steps) {
     case 1:
       return (
-        <div className='container' style={{ padding: '0 1rem' }}>
-          <h4 style={warn}>Please Choose atleast One!</h4>
-          <SearchArea
-            allres={datas}
-            selected={selectog}
-            onClick={(val: number) => setSelectTog((ini) => [...ini, val])}
-            onDelete={(val: number) =>
-              setSelectTog((ini) =>
-                ini.filter(function (e) {
-                  return e != val
-                })
-              )
-            }
-          />
-          <button
-            onClick={() =>
-              selectog.length == 0
-                ? setWarntog(true)
-                : setStep((ini) => ini + 1)
-            }
-            className='ctav'
-            style={btnFix}
-          >
-            Proceed to vote <i className='fa fa-arrow-right'></i>
-          </button>
-        </div>
+        <>
+          <div className='hideDesk'>
+            <JournalismSpectrumEdit
+              onClick={(val: any) => setStep((ini) => ini + val)}
+            />
+          </div>
+
+          <div className='container slideToggler' style={{ padding: '0 1rem' }}>
+            <h4 style={warn}>Please Choose atleast One!</h4>
+            <SearchArea
+              allres={datas}
+              selected={selectog}
+              onClick={(val: number) => setSelectTog((ini) => [...ini, val])}
+              onDelete={(val: number) =>
+                setSelectTog((ini) =>
+                  ini.filter(function (e) {
+                    return e != val
+                  })
+                )
+              }
+            />
+            <button
+              onClick={() =>
+                selectog.length == 0
+                  ? setWarntog(true)
+                  : setStep((ini) => ini + 1)
+              }
+              className='ctav'
+              style={btnFix}
+            >
+              Proceed to vote <i className='fa fa-arrow-right'></i>
+            </button>
+          </div>
+        </>
       )
       break
     case 2:
