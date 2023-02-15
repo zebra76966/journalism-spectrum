@@ -1,0 +1,48 @@
+div.journo-tile-div {
+  height: 40px;
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+div.journo-tile-div:not(:first-child) {
+  margin-left: -8px;
+}
+
+.journo-tile-image {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 10rem;
+  cursor: pointer;
+
+  border: 2px solid #afafaf;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #4c4c4c;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 4px;
+
+  font-size: 14px;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.41;
+  letter-spacing: 0.39px;
+  text-transform: none;
+
+  position: absolute;
+  top: 40px;
+  left: -40px;
+  z-index: 1;
+}
+
+.journo-tile-div:hover .tooltiptext {
+  visibility: visible;
+}

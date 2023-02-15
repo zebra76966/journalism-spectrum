@@ -190,8 +190,16 @@ h1 {
 .section p {
   font-size: 20px;
 }
+/* Hiding Slider on desktop view (default) */
+.slideToggler {
+  display: none;
+}
+/* Hidding Slider End */
 
 @media screen and (max-width: 768px) {
+  .slideToggler {
+    display: block;
+  }
   .container {
     max-width: 720px !important;
   }

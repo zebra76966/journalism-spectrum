@@ -2,10 +2,14 @@ import { Slider } from '../../components'
 import SearchArea from '../../components/SearchArea/search'
 import { useState } from 'react'
 import { Outlet, Link } from 'react-router-dom'
+import { Spectrum } from '../../components/Grid/Spectrum'
 
 function Explainer() {
-  const [activeBtn, setActivebtn] = useState('team')
+  // Sepctrum code VARS
+  const [averages, setAverages] = useState([])
+  const [swingState, setSwingState] = useState(null)
 
+  const [activeBtn, setActivebtn] = useState('team')
   let chkBtnstate = activeBtn == 'team' ? 'active' : ''
 
   return (
@@ -23,7 +27,7 @@ function Explainer() {
         </span>
       </div>
 
-      <div className='section'>
+      <div className='section slideToggler'>
         <h3>Political Spectrum</h3>
         <span>
           Use the sliders below to learn more about political and social views
@@ -40,7 +44,7 @@ function Explainer() {
         </span>
       </div>
 
-      <div className='section'>
+      <div className='section slideToggler'>
         <h3>Social Spectrum</h3>
         <span>
           Use the sliders below to learn more about political and social views
@@ -85,9 +89,13 @@ function Explainer() {
             NL Subscribers
           </button>
         </div>
+
+        <div className='container' style={{ position: 'relative' }}>
+          <Spectrum selectedJournalist={null} avgJournalists={averages} />
+        </div>
       </div>
 
-      <div className='section'>
+      <div className='section slideToggler'>
         <SearchArea />
       </div>
 
