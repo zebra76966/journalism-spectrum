@@ -10,7 +10,7 @@ const Card = (props: any) => {
         }
       >
         <div style={{ width: '100%' }}>
-          <img src={props.res.dp} className='vote-img' alt='...' />
+          <img src={props.res.imageURL} className='vote-img' alt='...' />
           <h3>{props.res.name}</h3>
         </div>
         {props.isVoted && <i className='fa fa-check selected-check'></i>}

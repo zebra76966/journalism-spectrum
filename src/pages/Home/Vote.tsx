@@ -1,6 +1,7 @@
 import SearchArea from '../../components/voteSteps/votesearch'
 import VoteStepa from '../../components/voteSteps/voteStep2'
 import mockData from '../../components/voteSteps/MOCK_DATA.json'
+import ogData from '../../components/Grid/data.json'
 import { JournalismSpectrumEdit } from '../../components/Grid/SpectrumEditPage'
 import { useState } from 'react'
 
@@ -20,7 +21,7 @@ const btnBack = {
 
 const Voting = (): JSX.Element | any => {
   const [swingState, setSwingState] = useState('')
-  const [datas, setData] = useState(mockData)
+  const [datas, setData] = useState(ogData)
   const [selectog, setSelectTog] = useState<number[]>([])
   const [warntog, setWarntog] = useState(false)
   const [steps, setStep] = useState(1)

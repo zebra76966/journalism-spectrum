@@ -12,7 +12,7 @@ const VoteCard = (props: any) => {
     <div className='container' style={{ marginBottom: '100px' }}>
       <div className='card'>
         <div style={cardAlign}>
-          <img src={props.res.dp} className='vote-img' alt='...' />
+          <img src={props.res.imageURL} className='vote-img' alt='...' />
           <h3 style={{ fontWeight: 'bold' }}>{props.res.name}</h3>
         </div>
       </div>

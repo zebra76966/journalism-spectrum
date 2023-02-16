@@ -8,7 +8,7 @@ function SearchArea(props: any) {
       <div className='container'>
         <div className='section'>
           <div>
-            {props.allres.map((pini: any) => {
+            {props.allres.journalists.map((pini: any) => {
               if (props.selected.includes(pini.id)) {
                 return <VoteCard key={pini.id} res={pini} />
               }

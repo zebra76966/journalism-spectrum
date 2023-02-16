@@ -19,7 +19,7 @@ function SearchArea(props: any) {
           </div>
 
           <div className='cardLayout'>
-            {props.allres.map((pini: any) => {
+            {props.allres.journalists.map((pini: any) => {
               if (pini.name.toLowerCase().includes(search)) {
                 return (
                   <Card
