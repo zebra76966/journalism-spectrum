@@ -412,3 +412,39 @@ hr {
   color: #214354;
   word-spacing: 10px;
 }
+
+.text-center {
+  text-align: center;
+}
+
+.swing-section {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.swing-section img {
+  max-width: 50%;
+}
+.ctaBox {
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+.ctaBox p {
+  color: #383838;
+  padding-bottom: 20px;
+}
+
+.sm-text {
+  font-size: small !important;
+  color: #ed1b24 !important;
+  padding: 5px 0 !important;
+  font-weight: bold;
+  border-bottom: 2px solid #ed1b24;
+  width: fit-content;
+}
+
+.reverse-row {
+  flex-direction: row-reverse;
+}

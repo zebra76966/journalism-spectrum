@@ -2,9 +2,10 @@ import React from 'react'
 import { useState } from 'react'
 import Card from './journCard'
 import mockData from './MOCK_DATA.json'
+import ogData from '../Grid/data.json'
 
 function SearchArea() {
-  const [datas, setData] = useState(mockData)
+  const [datas, setData] = useState(ogData)
   const [search, setSearch] = useState('')
 
   return (
@@ -27,7 +28,7 @@ function SearchArea() {
           width: '100%',
         }}
       >
-        {datas.map((pini) => {
+        {datas.journalists.map((pini: any) => {
           if (pini.name.toLowerCase().includes(search)) {
             return <Card key={pini.id} res={pini} />
           }

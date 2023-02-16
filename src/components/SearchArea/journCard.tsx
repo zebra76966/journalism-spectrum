@@ -8,7 +8,7 @@ const Card = (props: any) => {
           }}
         >
           <img
-            src={props.res.dp}
+            src={props.res.imageURL}
             style={{
               width: '200px',
               height: '200px',
@@ -18,8 +18,8 @@ const Card = (props: any) => {
             alt='...'
           />
           <h3>{props.res.name}</h3>
-          <h4>{props.res.job}</h4>
-          <a href='#'>
+          <h4>Journalist</h4>
+          <a href={props.res.twitterProfileURL}>
             <i className='fa fa-twitter' />
           </a>
         </div>

@@ -1,12 +1,6 @@
 {
   "journalists": [
     {
-      "id": "claurcufj0000xu2hypbw4fwr",
-      "name": "Basant Kumar",
-      "imageURL": "https://pbs.twimg.com/profile_images/1598040632458551297/hKqk7Vn7_400x400.jpg",
-      "twitterProfileURL": "https://twitter.com/Basantrajsonu"
-    },
-    {
       "id": "claurhly10002xu2h9p6cge7v",
       "name": "Abhinandan Sekhri",
       "imageURL": "https://pbs.twimg.com/profile_images/552050564356272129/lyEGRTAv_400x400.jpeg",
@@ -35,6 +29,12 @@
       "name": "Meghnad",
       "imageURL": "https://pbs.twimg.com/profile_images/1601157034468347904/0Q41WD4K_400x400.jpg",
       "twitterProfileURL": "https://twitter.com/Memeghnad"
+    },
+    {
+      "id": "claurcufj0000xu2hypbw4fwr",
+      "name": "Basant Kumar",
+      "imageURL": "https://pbs.twimg.com/profile_images/1598040632458551297/hKqk7Vn7_400x400.jpg",
+      "twitterProfileURL": "https://twitter.com/Basantrajsonu"
     }
   ]
 }
