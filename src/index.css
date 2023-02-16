@@ -426,6 +426,7 @@ hr {
 
 .swing-section img {
   max-width: 50%;
+  object-fit: cover;
 }
 .ctaBox {
   padding: 30px;
@@ -447,4 +448,87 @@ hr {
 
 .reverse-row {
   flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 768px) {
+  .swing-section {
+    display: block;
+    margin-bottom: 40px;
+  }
+  .swing-section img {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 700px;
+    height: 400px;
+    object-fit: cover;
+  }
+  .slideToggler {
+    display: block;
+  }
+  .hideDesk {
+    display: none !important;
+  }
+  .container {
+    max-width: 720px !important;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  .chartTabber {
+    width: 80%;
+  }
+  .card .vote-img {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  .chartTabber button {
+    font-size: 16px;
+    padding: 10px;
+  }
+  .cardLayout {
+    grid-template-columns: auto auto auto !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 1140px !important;
+  }
+  .cardLayout {
+    grid-template-columns: auto auto auto auto !important;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .container {
+    max-width: 920px !important;
+  }
+  .cardLayout {
+    grid-template-columns: auto auto auto !important;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  .section {
+    padding: 2rem 0 !important;
+  }
+  .container {
+    max-width: 490px !important;
+  }
+
+  .chartTabber {
+    width: 100%;
+  }
+  .chartTabber button {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .card .vote-img {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  .cardLayout {
+    gap: 1px !important;
+    width: 100%;
+  }
 }
