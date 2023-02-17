@@ -61,12 +61,13 @@ const Grid = ({
   useEffect(() => {
     let votedData =
       localStorage.getItem('votedInfo') == null
-        ? ''
+        ? null
         : JSON.parse(localStorage.getItem('votedInfo') || '{}')
-    setVotingBallot(votedData.votedTo)
+
+    votedData !== null ? setVotingBallot(votedData.votedTo) : ''
   }, [])
-  console.log(votingBallot.map((ini: any) => ini.name))
   let count = 0
+  let countMain = 0
   // Getting Voting Data end==>
 
   return (
@@ -100,19 +101,23 @@ const Grid = ({
             }}
           >
             <>
-              {currentUrl == '/journalism-spectrum/' && (
-                <div className='votedGrid'>
-                  {votingBallot.map((ini: any, i: number) => {
-                    if (ini.index == item.index && count <= 2) {
-                      count = count + 1
-                      return <img src={ini.image} className='smDpimg' />
-                    } else if (ini.index == item.index && count > 2) {
-                      count = count + 1
-                    }
-                  })}
-                  {count > 2 && <span className='smDptext'>+ {count + 1}</span>}
-                </div>
-              )}
+              {currentUrl == '/journalism-spectrum/' &&
+                votingBallot.length !== 0 && (
+                  <div className='votedGrid'>
+                    {votingBallot.map((ini: any, i: number) => {
+                      if (ini.index == item.index && count <= 2) {
+                        count = count + 1
+                        return <img src={ini.image} className='smDpimg' />
+                      } else if (ini.index == item.index && count > 2) {
+                        count = count + 1
+                        countMain = countMain + 1
+                      }
+                    })}
+                    {count > 2 && (
+                      <span className='smDptext'>+ {countMain + 1}</span>
+                    )}
+                  </div>
+                )}
             </>
 
             {avgJournalists &&
