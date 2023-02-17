@@ -1,6 +1,6 @@
 import { Slider } from '../../components'
 import SearchArea from '../../components/SearchArea/search'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Outlet, Link } from 'react-router-dom'
 import { Spectrum } from '../../components/Grid/Spectrum'
 

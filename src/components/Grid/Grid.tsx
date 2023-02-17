@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { JournoChip } from './JournoChip'
 import { JournoTileGroup } from './JournoTileGroup'
+import ogData from '../../components/Grid/data.json'
 
 import { COL_HEADERS, NO_OF_COLS, NO_OF_ROWS, ROW_HEADERS } from './constants'
 import './Grid.css'
@@ -18,6 +19,15 @@ const Grid = ({
   setCurrentJournoIndex,
   resetCurrentJournoIndex,
 }: any) => {
+  const [datas, setData] = useState(ogData)
+  const ndata = datas.journalists.slice(0, 4)
+
+  const [currentUrl, setCurrentUrl] = useState('')
+  useEffect(() => {
+    let cu = window.location.pathname
+    setCurrentUrl(cu)
+  }, [])
+
   const [items] = useState(
     [...Array(NO_OF_COLS * NO_OF_ROWS)].map((elem, i) => {
       return {
@@ -46,14 +56,27 @@ const Grid = ({
       index: itemIndex,
     })
   }
+  // Getting voting data start===>
+  const [votingBallot, setVotingBallot] = useState<any>([])
+  useEffect(() => {
+    let votedData =
+      localStorage.getItem('votedInfo') == null
+        ? ''
+        : JSON.parse(localStorage.getItem('votedInfo') || '{}')
+    setVotingBallot(votedData.votedTo)
+  }, [])
+  console.log(votingBallot.map((ini: any) => ini.name))
+  let count = 0
+  // Getting Voting Data end==>
 
   return (
     <div className='spectrum-grid'>
-      {items.map((item) => {
+      {items.map((item, j) => {
         const toPaintBorderRight = item.cellWeightX === -1
         const toPaintBorderLeft = item.cellWeightX === 1
         const toPaintBorderUp = item.cellWeightY === -1
         const toPaintBorderDown = item.cellWeightY === 1
+        count = 0
         return (
           <div
             className={`grid-item ${
@@ -76,6 +99,22 @@ const Grid = ({
               return false
             }}
           >
+            <>
+              {currentUrl == '/journalism-spectrum/' && (
+                <div className='votedGrid'>
+                  {votingBallot.map((ini: any, i: number) => {
+                    if (ini.index == item.index && count <= 2) {
+                      count = count + 1
+                      return <img src={ini.image} className='smDpimg' />
+                    } else if (ini.index == item.index && count > 2) {
+                      count = count + 1
+                    }
+                  })}
+                  {count > 2 && <span className='smDptext'>+ {count + 1}</span>}
+                </div>
+              )}
+            </>
+
             {avgJournalists &&
             avgJournalists.filter(
               (journo: any) =>

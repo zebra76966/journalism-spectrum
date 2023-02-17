@@ -67,9 +67,22 @@ const JournalismSpectrumEdit = (props: any) => {
       const submission = 'submit data via POST request'
 
       console.log({ submission })
+      let arr =
+        localStorage.getItem('votedInfo') == null
+          ? { votedTo: [{}] }
+          : JSON.parse(localStorage.getItem('votedInfo') || '{}')
+      arr.votedTo.push({
+        name: selectedOption.value,
+        image: selectedOption.image,
+        index: currentJournoIndex.index,
+        votedBy: member,
+      })
+
+      localStorage.setItem('votedInfo', JSON.stringify(arr))
       setIsSubmitting(false)
 
       // Navigate to confirm page
+      props.onClick(2)
       return submission
     } catch (error) {
       console.error(error)
@@ -152,16 +165,15 @@ const JournalismSpectrumEdit = (props: any) => {
           resetCurrentJournoIndex={resetCurrentJournoIndex}
         />
         <div className='btn-wrapper '>
-          {/* <Link
+          <button
             className={`try-btn ctav ${isSubmitting ? 'btn-disabled' : ''}`}
-            // onClick={handleSubmit}
-            to='/confirm'
+            onClick={handleSubmit}
           >
             {isSubmitting ? 'Please wait...' : 'Submit'}
-          </Link> */}
-          <button onClick={(val) => props.onClick(2)} className='ctav'>
-            Proceed to vote <i className='fa fa-arrow-right'></i>
           </button>
+          {/* <button onClick={(val) => props.onClick(2)} className='ctav'>
+          Proceed to vote <i className='fa fa-arrow-right'></i>
+        </button> */}
         </div>
       </section>
       <section className='sub-section'>
