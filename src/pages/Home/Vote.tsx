@@ -22,10 +22,10 @@ const btnBack = {
 const Voting = (): JSX.Element | any => {
   const [swingState, setSwingState] = useState('')
   const [datas, setData] = useState(ogData)
-  const [selectog, setSelectTog] = useState<number[]>([])
+  const [selectog, setSelectTog] = useState<number>(-1)
   const [warntog, setWarntog] = useState(false)
   const [steps, setStep] = useState(1)
-  console.log(selectog)
+  // console.log(selectog)
   const warn = {
     color: '#ed1b24',
     background: 'rgb(255 202 202)',
@@ -46,25 +46,17 @@ const Voting = (): JSX.Element | any => {
           </div>
 
           <div className='container slideToggler' style={{ padding: '0 1rem' }}>
-            <h4 style={warn}>Please Choose atleast One!</h4>
+            <h4 style={warn}>Please Choose One!</h4>
             <SearchArea
               allres={datas}
               selected={selectog}
-              onClick={(val: number) => setSelectTog((ini) => [...ini, val])}
-              onDelete={(val: number) =>
-                setSelectTog((ini) =>
-                  ini.filter(function (e) {
-                    return e != val
-                  })
-                )
-              }
+              onClick={(val: number) => setSelectTog(val)}
+              onDelete={(val: number) => setSelectTog(-1)}
             />
             <button
-              onClick={() =>
-                selectog.length == 0
-                  ? setWarntog(true)
-                  : setStep((ini) => ini + 1)
-              }
+              onClick={() => {
+                selectog == -1 ? setWarntog(true) : setStep((ini) => ini + 1)
+              }}
               className='ctav'
               style={btnFix}
             >
@@ -84,14 +76,18 @@ const Voting = (): JSX.Element | any => {
 
             <h1 style={{ margin: '0 auto' }}>Vote your Journalist?</h1>
           </div>
-          <VoteStepa allres={datas} selected={selectog} />
-          <button
+          <VoteStepa
+            allres={datas}
+            selected={selectog}
+            onClick={(val: any) => setStep((ini) => ini + val)}
+          />
+          {/* <button
             onClick={() => setStep((ini) => ini + 1)}
             className='ctav'
             style={btnFix}
           >
             Submit <i className='fa fa-check'></i>
-          </button>
+          </button> */}
         </div>
       )
       break

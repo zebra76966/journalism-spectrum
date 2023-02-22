@@ -114,7 +114,7 @@ const Grid = ({
                       }
                     })}
                     {count > 2 && (
-                      <span className='smDptext'>+ {countMain + 1}</span>
+                      <span className='smDptext'>+ {countMain}</span>
                     )}
                   </div>
                 )}

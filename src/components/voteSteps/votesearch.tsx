@@ -25,7 +25,7 @@ function SearchArea(props: any) {
                   <Card
                     key={pini.id}
                     res={pini}
-                    isVoted={props.selected.includes(pini.id) ? true : false}
+                    isVoted={props.selected == pini.id ? true : false}
                     onClick={(val: number) => props.onClick(val)}
                     onDelete={(val: number) => props.onDelete(val)}
                   />

@@ -1,5 +1,5 @@
 import classes from './Slider.module.scss'
-import { max, min, map, find } from 'lodash'
+import { max, min, map, find, values } from 'lodash'
 import React from 'react'
 
 type SliderValue = {
@@ -11,36 +11,43 @@ type SliderValue = {
 type SliderProps = {
   type: 'political' | 'social'
   hidetext: false | true
+  index: any
 }
 
 const politicalValues: SliderValue[] = [
   {
-    label: 'Liberal',
-    value: 2,
+    label: 'Laissez Faire',
+    value: 5,
     description:
       'Liberal Description. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet',
   },
   {
-    label: 'Slightly liberal',
-    value: 1,
+    label: 'Capitalist',
+    value: 4,
+    description:
+      'Liberal Description. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet',
+  },
+  {
+    label: 'Regulationist',
+    value: 3,
     description:
       'Slightly liberal Description. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet',
   },
   {
-    label: 'Centrist',
-    value: 0,
+    label: 'Welfarist',
+    value: 2,
     description:
       'Centrist Description. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet',
   },
   {
-    label: 'Slightly Conservative',
-    value: -1,
+    label: 'Socialist',
+    value: 1,
     description:
       'Slightly Conservative Description. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet',
   },
   {
-    label: 'Conservative',
-    value: -2,
+    label: 'Communist',
+    value: 0,
     description:
       'Conservative Description. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet',
   },
@@ -48,40 +55,47 @@ const politicalValues: SliderValue[] = [
 
 const socialValues: SliderValue[] = [
   {
-    label: 'Liberal',
-    value: 2,
+    label: 'Anarchism',
+    value: 5,
     description:
       'Liberal Description. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet',
   },
   {
-    label: 'Slightly liberal',
-    value: 1,
+    label: 'Libertarianism',
+    value: 4,
+    description:
+      'Liberal Description. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet',
+  },
+  {
+    label: 'Liberalism',
+    value: 3,
     description:
       'Slightly liberal Description. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet',
   },
   {
-    label: 'Centrist',
-    value: 0,
+    label: 'Statist',
+    value: 2,
     description:
       'Centrist Description. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet',
   },
   {
-    label: 'Slightly Conservative',
-    value: -1,
+    label: 'Authoritarian',
+    value: 1,
     description:
       'Slightly Conservative Description. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet',
   },
   {
-    label: 'Conservative',
-    value: -2,
+    label: 'Totalitarian',
+    value: 0,
     description:
       'Conservative Description. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet consecture. Lorem ipsum dolor sit amet',
   },
 ]
 
-function Slider({ type = 'political', hidetext = false }: SliderProps) {
+function Slider({ type = 'political', hidetext = false, index }: SliderProps) {
   const values = type === 'political' ? politicalValues : socialValues
   const [value, setValue] = React.useState(0)
+
   return (
     <div className={`${classes.sliderContainer} ${classes[type]}`}>
       <div className={classes.leftRight}>
@@ -94,9 +108,12 @@ function Slider({ type = 'political', hidetext = false }: SliderProps) {
         min={min(map(values, 'value'))}
         max={max(map(values, 'value'))}
         step='1'
-        defaultValue={0}
+        defaultValue={1}
         value={value}
-        onChange={(e) => setValue(parseInt(e.target.value))}
+        onChange={(e) => {
+          setValue(parseInt(e.target.value))
+          index(parseInt(e.target.value))
+        }}
       />
       <output className={classes[type]}>
         <h3>{find(values, (v) => v.value === value)?.label}</h3>
