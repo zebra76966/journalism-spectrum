@@ -40,10 +40,10 @@ function Explainer() {
             borderRadius: '10px',
           }}
         >
-          <Slider type='political' hidetext={true} />
+          <Slider type='political' hidetext={true} index={-1} />
         </span>
       </div>
-
+      {/* Dummy Sliders */}
       <div className='section slideToggler'>
         <h3>Social Spectrum</h3>
         <span>
@@ -57,10 +57,12 @@ function Explainer() {
             borderRadius: '10px',
           }}
         >
-          <Slider type='social' hidetext={true} />
+          <Slider type='social' hidetext={true} index={-1} />
         </span>
       </div>
       <hr />
+
+      {/* Dummy Sliders End */}
 
       <div className='section'>
         <h3>Where do the mainstream journalists lie?</h3>
